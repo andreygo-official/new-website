@@ -1,16 +1,15 @@
 .featured-projects {
   .lumen-design-studio {
+    margin-top: 50px;
     background-image: url(../../assets/cover.jpg);
     position: relative;
     min-height: 100vh;
     background-size: cover;
     background-position: center;
     overflow: hidden;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     padding-top: 20px;
     padding-bottom: 20px;
   }
@@ -18,12 +17,13 @@
   .headings {
     position: relative;
     width: fit-content;
-    padding-left: 50px;
+    padding-left: clamp(0.5rem, 4vw, 6rem);
     padding-right: clamp(1rem, 12.6rem, 20rem);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    clip-path: polygon(0 0, 93.6% 0, 92% 100%, 0 100%);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    clip-path: polygon(0 0, 92% 0, 90.1% 100%, 0 100%);
     background-color: rgba(245, 241, 234, 0.7);
+    margin-top: 30px;
 
     h1 {
       color: #523427;
@@ -61,7 +61,7 @@
     h2 {
       color: #523427;
       margin-bottom: 50px;
-      padding-left: clamp(1rem, 7rem, 15rem);
+      padding-left: clamp(0.5rem, 4vw, 6rem);
     }
 
     .project-body * {
@@ -95,7 +95,7 @@
 
 
 
-  @media (max-width: 992px) {
+  @media (max-width: 991.98px) {
     .headings {
       clip-path: none;
     }
