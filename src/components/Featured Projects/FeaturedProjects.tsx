@@ -1,5 +1,5 @@
 import "./featured-projects.scss";
-import {projectsData} from '../Featured Projects/projects.ts'
+import {projectsData} from './projects.ts'
 import FeaturedProject from "./FeaturedProject.tsx";
 
 const FeaturedProjects = () => {
