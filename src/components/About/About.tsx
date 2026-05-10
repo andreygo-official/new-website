@@ -23,7 +23,7 @@ const About = () => {
                 <span>design awards</span>
               </h5>
             </div>
-            <button className="btn"> learn more</button>
+            <button className="btn">learn more</button>
           </div>
         </div>
       </div>

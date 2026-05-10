@@ -1,15 +1,15 @@
 import About from "../About/About"
+import Contact from "../Contact/Contact"
 import FeaturedProjects from "../Featured Projects/FeaturedProjects"
-import Header from "../Header/Header"
 import Services from "../Services/Services"
 
 const Body = () => {
   return (
     <>
-      <Header />
       <FeaturedProjects />
       <Services />
       <About />
+      <Contact />
     </>
   )
 }
