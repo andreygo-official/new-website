@@ -1,5 +1,5 @@
-
 import './header.scss'
+import {scrollToSection} from '../../../scrollFunc'
 
 const Header = () => {
   return (
@@ -11,11 +11,15 @@ const Header = () => {
     </button>
     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div className="navbar-nav">
-        <a className="nav-link" href="#">project</a>
-        <a className="nav-link" href="#">services</a>
-        <a className="nav-link" href="#">about</a>
-        <a className="nav-link" href="#">contact</a>
-        <button type="button" className="btn">book a call</button>
+        <a className="nav-link" href="#projects">projects</a>
+        <a className="nav-link" href="#services">services</a>
+        <a className="nav-link" href="#about">about</a>
+        <a className="nav-link" href="#contact">contact</a>
+        <button 
+        type="button"
+        className="btn"
+        onClick={() => scrollToSection('footer')}
+        >book a call</button>
       </div>
     </div>
   </div>

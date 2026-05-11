@@ -4,7 +4,6 @@ import * as yup from "yup";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IMaskInput } from "react-imask";
-import { useState } from "react";
 
 type Data = {
   email: string;
@@ -38,7 +37,7 @@ const Contact = () => {
     mode: 'onTouched'
   });
   return (
-    <div className="contact-us-container">
+    <div id="contact" className="contact-us-container">
       <img src={contactUsImg} alt="contact-us" />
       <div className="contact-image">
         <div className="contact-form">

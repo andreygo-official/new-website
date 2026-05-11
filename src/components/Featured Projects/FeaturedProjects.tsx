@@ -1,5 +1,6 @@
 import "./featured-projects.scss";
 import {projectsData} from './projects.ts'
+import { scrollToSection } from "../../../scrollFunc.ts";
 import FeaturedProject from "./FeaturedProject.tsx";
 
 const FeaturedProjects = () => {
@@ -10,9 +11,12 @@ const FeaturedProjects = () => {
           <h1>Lumen Design Studio</h1>
           <h2>Simple, Warm, Timeless Interior</h2>
         </div>
-        <button className="btn"> view projects</button>
+        <button
+        className="btn hero-btn"
+        onClick={() => scrollToSection('projects')}
+        > view projects</button>
       </div>
-      <div className="projects">
+      <div id="projects" className="projects">
         <h2>Featured Projects</h2>
         <div className="row">
          {

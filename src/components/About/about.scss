@@ -19,6 +19,14 @@
         object-fit: cover;
         border-radius: 25px;
     }
+    .about-grid img {
+      transition: transform 0.35s ease, filter 0.35s ease;
+    }
+    
+    .about-grid img:hover {
+      transform: scale(1.02);
+      filter: brightness(0.92);
+    }
 
     .about-us-description {
         height: 100%;
@@ -31,12 +39,14 @@
             font-size: 28px;
             line-height: 1.05;
             max-width: 560px;
+            text-align: justify;
         }
     }
     .about-us-statistics {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
+        column-gap: 40px;
+        width: 100%;
       
         h5 {
           color: #7D5A44;
@@ -53,6 +63,25 @@
           font-weight: 700;
           margin-bottom: 16px;
         }
+        h5:nth-child(1) {
+          text-align: left;
+        }
+    
+        h5:nth-child(2) {
+          text-align: center;
+        }
+    
+        h5:nth-child(3) {
+          text-align: right;
+        }
+      
+        .stat-item:nth-child(2) {
+          text-align: center;
+        }
+      
+        .stat-item:nth-child(3) {
+          text-align: right;
+        }
       }
       .btn{
         border-radius: 20px;
@@ -61,6 +90,13 @@
         font-size: clamp(1.2rem, 1.5vw, 2rem);
         border: 1px solid #7D5A44;
         padding: 5px 50px;
+        transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+      }
+      
+      .btn:hover {
+        background-color: #7d5a44;
+        color: #f5f1ea;
+        box-shadow: 0 8px 18px rgba(82, 52, 39, 0.18);
       }
       @media (max-width: 991.98px) {
         .about-grid {
@@ -84,5 +120,97 @@
           width: 100%;
         }
       }
+      h1,
+      img,
+      .about-us-description h2,
+      .about-us-statistics h5,
+      .btn {
+        opacity: 0;
+      }
+    
+      h1 {
+        transform: translateY(25px);
+      }
+    
+      img {
+        transform: translateX(-45px);
+      }
+    
+      .about-us-description h2 {
+        transform: translateX(45px);
+      }
+    
+      .about-us-statistics h5 {
+        transform: translateY(30px);
+      }
+    
+      .btn {
+        transform: translateY(25px);
+      }
+    
+      &.show {
+        h1 {
+          animation: fadeUp 0.7s ease-out forwards;
+        }
+    
+        img {
+          animation: fadeFromLeft 0.9s ease-out 0.15s forwards;
+        }
+    
+        .about-us-description h2 {
+          animation: fadeFromRight 0.9s ease-out 0.25s forwards;
+        }
+    
+        .about-us-statistics h5:nth-child(1) {
+          animation: fadeUp 0.7s ease-out 0.45s forwards;
+        }
+    
+        .about-us-statistics h5:nth-child(2) {
+          animation: fadeUp 0.7s ease-out 0.6s forwards;
+        }
+    
+        .about-us-statistics h5:nth-child(3) {
+          animation: fadeUp 0.7s ease-out 0.75s forwards;
+        }
+    
+        .btn {
+          animation: fadeUp 0.7s ease-out 0.95s forwards;
+        }
+      }
 
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

@@ -12,9 +12,22 @@
     justify-content: space-between;
     padding-top: 20px;
     padding-bottom: 20px;
+    animation: heroZoom 1.4s ease-out both;
+  }
+  @keyframes heroZoom {
+    from {
+      transform: scale(1.03);
+      opacity: 0;
+    }
+  
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 
   .headings {
+    animation: headingSlideIn 1s ease-out 0.3s both;
     position: relative;
     width: fit-content;
     padding-left: clamp(0.5rem, 4vw, 6rem);
@@ -24,17 +37,41 @@
     clip-path: polygon(0 0, 92% 0, 90.1% 100%, 0 100%);
     background-color: rgba(245, 241, 234, 0.7);
     margin-top: 30px;
+    @keyframes headingSlideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-80px);
+      }
+    
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
 
     h1 {
       color: #523427;
       font-size: clamp(2rem, 4vw, 6.5rem);
       margin: 0;
+      animation: textFadeUp 0.8s ease-out 0.7s both;
     }
 
     h2 {
       color: #7d5a44;
       margin: 10px 0 0;
       font-size: clamp(1.3rem, 2vw, 3rem);
+      animation: textFadeUp 0.8s ease-out 0.9s both;
+    }
+    @keyframes textFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
 
@@ -46,24 +83,38 @@
     z-index: 2;
   }
 
-  .btn {
+  .hero-btn {
     border-radius: 20px;
     background-color: #f5f1ea;
     color: #7d5a44;
     margin-left: 50px;
     width: fit-content;
     font-size: clamp(1.2rem, 1.5vw, 2rem);
+  
+    opacity: 0;
+    transform: translateY(25px);
+  
+    animation: buttonFadeIn 0.8s ease-out 1.6s forwards;
+    transition: box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .hero-btn:hover {
+    box-shadow: 0 8px 18px rgba(82, 52, 39, 0.2);
+    background-color: #ffffff;
+    }
   }
 
   .projects {
     margin-top: 100px;
-
+    padding-top: 30px;
     h2 {
       color: #523427;
       margin-bottom: 50px;
       padding-left: clamp(0.5rem, 4vw, 6rem);
     }
-
+    .project{
+      overflow: hidden;
+    }
     .project-body * {
       margin-top: 25px;
     }
@@ -82,6 +133,11 @@
       object-fit: cover;
       border-radius: 10%;
       display: block;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+    .project:hover img {
+      transform: scale(1.04);
+      filter: brightness(0.9);
     }
   
     @media (max-width: 992px) {
@@ -108,4 +164,14 @@
     }
 
   }
-}
+  @keyframes buttonFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

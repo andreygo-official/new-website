@@ -2,3 +2,6 @@ body{
     font-family: "Space Grotesk", sans-serif;
     background-color: #F5F1EA ;
 }
+html {
+    scroll-behavior: smooth;
+  }
